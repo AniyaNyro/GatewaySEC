@@ -8,6 +8,6 @@ public class GatewaySecApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GatewaySecApplication.class, args);
+		System.out.println("Hello World");
 	}
-
 }
