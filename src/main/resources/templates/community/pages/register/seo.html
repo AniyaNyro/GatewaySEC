@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="community/fragments :: head">
+    <meta charset="UTF-8"/>
+    <title>Register Your SEO</title>
+</head>
+<body>
+    <div>
+        <nav th:replace="community/fragments :: navigation"></nav>
+    </div>
+    <div>
+        <nav th:replace="community/fragments :: navigation2"></nav>
+    </div>
+
+    <h1 th:text="${title}">Default Title</h1>
+
+    <form method="post" th:object="${seo}">
+        <div>
+            <label th:for="name">SEO Name</label>
+            <input th:field="*{name}"/>
+            <span th:errors="*{name}" class="error"></span>
+        </div>
+        <div>
+            <label th:for="highName">Name of Your High School</label>
+            <input th:field="*{highName}"/>
+            <span th:errors="*{highName}" class="error"></span>
+        </div>
+        <div>
+            <label th:for="teamMs">Sponsers</label>
+            <p th:unless="${teamMs} and ${teamMs.size()}">no team members :(</p>
+            <select th:each="team : ${teamMs}">
+                <option th:value="${team.id}" th:text="${team.name}"></option>
+            </select>
+        </div>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>

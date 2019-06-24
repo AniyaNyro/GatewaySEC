@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add Active Members</title>
+</head>
+<body>
+
+<h3>Active Members</h3>
+<p th:unless="${students} and ${students.size()}">no active members :(</p>
+<tr th:each="student : ${students}">
+    <td th:text="${student.fName}"></td>
+    <td th:text="${student.lName}"></td>
+    <td th:text="${student.grade.name}"></td>
+</tr>
+
+<div>
+    <label th:for="students">Add Active Members</label>
+    <form method="post" th:object="student">
+        <div>
+            <label th:for="fname">First Name</label>
+            <input th:field="*{fname}"/>
+        </div>
+        <div>
+            <label th:for="lname">Last Name</label>
+            <input th:field="*{lname}"/>
+        </div>
+        <div>
+            <label th:for="grade">Grade Level</label>
+            <select th:field="*{grade}">
+                <option th:each="gradeLevel : ${gradeLevels}"
+                        th:text="${gradeLevel.name}"
+                        th:value="${gradeLevel}"></option>
+            </select>
+        </div>
+        <input type="submit" value="Add Student" />
+    </form>
+</div>
+
+</body>
+</html>

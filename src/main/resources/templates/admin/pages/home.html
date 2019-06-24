@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="admin/fragments :: head">
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+</head>
+<body>
+<div>
+    <nav th:replace="admin/fragments :: navigation"></nav>
+</div>
+<div>
+    <nav th:replace="admin/fragments :: navigation2"></nav>
+</div>
+
+<h1 th:text="${title}">Default Title</h1>
+
+<h1>Recent Blog Post Here</h1>
+
+<h2>Student Empowerment Organization Request</h2>
+<p th:unless="${seo} and ${seo.size()}">no seos :(</p>
+
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <th>High School Name</th>
+            </tr>
+
+            <tr th:each="seo : ${seos}">
+                <td th:text="${seo.name}"></td>
+                <td th:text="${seo.highName}"></td>
+
+            </tr>
+
+        </table>
+
+<h2>Partner Request</h2>
+
+<a href="admin/register/team">| Register a Team Member | </a><a href="/register/seo">Register Your SEO | </a><a href="register/partner">Register a Partner |</a>
+
+</body>
+</html>

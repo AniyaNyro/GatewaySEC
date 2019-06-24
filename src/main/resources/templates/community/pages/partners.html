@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="community/fragments :: head">
+    <meta charset="UTF-8"/>
+    <title>Our Partners</title>
+</head>
+<body>
+<nav th:replace="community/fragments :: navigation"></nav>
+<nav th:replace="community/fragments :: navigation2"></nav>
+
+<h1 th:text="${title}">Default Title</h1>
+
+<p th:unless="${partners} and ${partners.size()}">no partners :(</p>
+<table>
+    <tr th:each="partner : ${partners}">
+        <td th:text="${partner.name}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

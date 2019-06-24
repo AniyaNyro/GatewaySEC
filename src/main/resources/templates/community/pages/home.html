@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="community/fragments :: head">
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+</head>
+<body>
+    <div>
+        <nav th:replace="community/fragments :: navigation"></nav>
+    </div>
+    <div>
+        <nav th:replace="community/fragments :: navigation2"></nav>
+    </div>
+    <h1>This is Your Home Page.</h1>
+    <h3>Upcoming Events Carousel Here</h3>
+
+
+    <a href="/register/partner">| Become a Partner | </a><a href="/register/seo">Register Your SEO | </a><a href="register/funder">Donate Here |</a>
+
+</body>
+</html>

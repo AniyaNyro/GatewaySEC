@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="community/fragments :: head">
+    <meta charset="UTF-8"/>
+    <title>Our Funders</title>
+</head>
+<body>
+<nav th:replace="community/fragments :: navigation"></nav>
+<nav th:replace="community/fragments :: navigation2"></nav>
+<h1 th:text="${title}">Default Title</h1>
+
+<p th:unless="${funders} and ${funders.size()}">no partners :(</p>
+<table>
+    <tr th:each="funder : ${funders}">
+        <td th:text="${funder.name}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

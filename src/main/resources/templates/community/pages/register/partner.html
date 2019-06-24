@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="community/fragments :: head">
+    <meta charset="UTF-8"/>
+    <title>Become a Partner</title>
+</head>
+<body>
+
+    <div>
+        <nav th:replace="community/fragments :: navigation"></nav>
+    </div>
+    <div>
+        <nav th:replace="community/fragments :: navigation2"></nav>
+    </div>
+    <h1 th:text="${title}">Default Title</h1>
+
+    <form method="post" th:object="${partner}">
+        <div>
+            <label th:for="name">Name</label>
+            <input type="text" th:field="*{name}"/>
+            <span th:errors="*{name}" class="error"></span>
+        </div>
+
+        <div>
+            <label th:for="who">Identity</label>
+            <select th:field="*{who}">
+                <option th:each="who : ${whos}"
+                        th:text="${who.name}"
+                        th:value="${who}"></option>
+            </select>
+            <span th:errors="*{who}" class="error"></span>
+        </div>
+        <div>
+            <label th:for="number">Phone Number</label>
+            <input value="3145555555" th:field="*{number}"/>
+            <span th:errors="*{number}" class="error"></span>
+        </div>
+        <div>
+            <label th:for="email">Email</label>
+            <input th:field="*{email}"/>
+            <span th:errors="*{email}" class="error"></span>
+        </div>
+        <div>
+            <label th:for="industry">Industry</label>
+            <input th:field="*{industry}"/>
+            <span th:errors="*{industry}" class="error"></span>
+        </div>
+        <div>
+            <label th:for="description">Describe the Resources You Can Provide</label>
+            <textarea th:field="*{description}"></textarea>
+            <span th:errors="*{description}" class="error"></span>
+        </div>
+        <input type="submit" value="Submit Request" />
+    </form>
+</body>
+</html>

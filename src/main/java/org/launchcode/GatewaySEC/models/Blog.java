@@ -1,4 +1,4 @@
 package org.launchcode.GatewaySEC.models;
 
-public class Admin {
+public class Blog {
 }
