@@ -26,13 +26,14 @@
             <span th:errors="*{highName}" class="error"></span>
         </div>
         <div>
-            <label th:for="teamMs">Sponsers</label>
             <p th:unless="${teamMs} and ${teamMs.size()}">no team members :(</p>
-            <select th:each="team : ${teamMs}">
-                <option th:value="${team.id}" th:text="${team.name}"></option>
+            <label th:for="teamMs">Sponsers</label>
+            <select th:field="*{teamMs}">
+                <option value="null">No Sponsor</option>
+                <option th:each="team : ${teamMs}" th:value="${team.id}" th:text="${team.name}"></option>
             </select>
         </div>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit Request" />
     </form>
 </body>
 </html>

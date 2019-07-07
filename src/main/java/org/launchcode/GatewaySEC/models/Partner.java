@@ -17,11 +17,10 @@ public class Partner {
     private String name;
 
     @NotNull
-    private Boolean who;
+    private Who who;
 
-    private int number;
+    private Long number;
 
-    @NotNull
     private String email;
 
     @NotNull
@@ -31,20 +30,26 @@ public class Partner {
     @Size(min=1, max= 100)
     private String description;
 
-    @NotNull
     private Boolean isFunder;
 
-    public Partner(String name, Boolean who, int number, String email, String industry, String description) {
+    private Boolean approved;
+
+
+    public Partner(String name, Who who, Long number, String email, String industry, String description) {
         this.name = name;
         this.who = who;
         this.number = number;
         this.email = email;
         this.industry = industry;
         this.description = description;
-        this.isFunder= false;
+
     }
 
-    public Partner() {}
+    public Partner() {
+        this.isFunder= false;
+        this.approved= false;
+
+    }
 
     public int getId() {
         return id;
@@ -62,19 +67,19 @@ public class Partner {
         this.name = name;
     }
 
-    public Boolean getWho() {
+    public Who getWho() {
         return who;
     }
 
-    public void setWho(Boolean who) {
+    public void setWho(Who who) {
         this.who = who;
     }
 
-    public int getNumber() {
+    public Long getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(Long number) {
         this.number = number;
     }
 
@@ -108,5 +113,11 @@ public class Partner {
 
     public void setFunder(Boolean funder) {
         isFunder = funder;
+    }
+
+    public Boolean getApproved() { return approved; }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
     }
 }

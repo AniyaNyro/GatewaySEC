@@ -21,11 +21,13 @@ public class Student {
     @ManyToOne
     private SEO seo;
 
-    public Student(String fName, String lName, GradeLevel grade) {
+    public Student() { }
+
+    public Student(String fName, String lName, GradeLevel grade, SEO seo) {
         this.fName = fName;
         this.lName = lName;
         this.grade = grade;
-        this.seo = null;
+        this.seo = seo;
     }
 
     public int getId() {

@@ -18,16 +18,28 @@ public class Funder {
     private String name;
 
     @NotNull
-    private Boolean who;
+    private Who who;
 
-    private int number;
+    private Long number;
 
-    @NotNull
+
     private String email;
 
-    @NotNull
+
     private Boolean isPartner;
 
+    public Funder() {
+        this.isPartner = false;
+
+    }
+
+    public Funder(String name, Who who, Long number, String email) {
+        this.name = name;
+        this.who = who;
+        this.number = number;
+        this.email = email;
+
+    }
 
     public int getId() {
         return id;
@@ -45,19 +57,19 @@ public class Funder {
         this.name = name;
     }
 
-    public Boolean getWho() {
+    public Who getWho() {
         return who;
     }
 
-    public void setWho(Boolean who) {
+    public void setWho(Who who) {
         this.who = who;
     }
 
-    public int getNumber() {
+    public Long getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(Long number) {
         this.number = number;
     }
 

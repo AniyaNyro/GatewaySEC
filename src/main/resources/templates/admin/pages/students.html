@@ -6,24 +6,39 @@
 </head>
 <body>
 
-<h3>Active Members</h3>
+<div>
+    <nav th:replace="admin/fragments :: navigation"></nav>
+</div>
+<div>
+    <nav th:replace="admin/fragments :: navigation2"></nav>
+</div>
 <p th:unless="${students} and ${students.size()}">no active members :(</p>
-<tr th:each="student : ${students}">
-    <td th:text="${student.fName}"></td>
-    <td th:text="${student.lName}"></td>
-    <td th:text="${student.grade.name}"></td>
-</tr>
+<table>
 
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Grade Level</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.fName}"></td>
+        <td th:text="${student.lName}"></td>
+        <td th:text="${student.grade.name}"></td>
+    </tr>
+</table>
+<h1 th:text="${title}">Default Title</h1>
 <div>
     <label th:for="students">Add Active Members</label>
-    <form method="post" th:object="student">
+    <form method="post" th:object="${form}">
         <div>
-            <label th:for="fname">First Name</label>
-            <input th:field="*{fname}"/>
+            <label th:for="fName">First Name</label>
+            <input th:field="*{fName}"/>
+            <span th:errors="*{fName}"></span>
         </div>
         <div>
-            <label th:for="lname">Last Name</label>
-            <input th:field="*{lname}"/>
+            <label th:for="lName">Last Name</label>
+            <input th:field="*{lName}"/>
+            <span th:errors="*{lName}" ></span>
         </div>
         <div>
             <label th:for="grade">Grade Level</label>
@@ -33,6 +48,7 @@
                         th:value="${gradeLevel}"></option>
             </select>
         </div>
+        <input type="hidden" value="*{seoId}"/>
         <input type="submit" value="Add Student" />
     </form>
 </div>

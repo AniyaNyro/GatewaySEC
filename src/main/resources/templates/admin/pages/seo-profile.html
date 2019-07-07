@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="admin/fragments :: head">
+    <meta charset="UTF-8"/>
+    <title>Profile</title>
+</head>
+<body>
+<div>
+    <nav th:replace="admin/fragments :: navigation"></nav>
+</div>
+<div>
+    <nav th:replace="admin/fragments :: navigation2"></nav>
+</div>
+<h1 th:text="${title}">Default Title</h1>
+<h1 th:text="${seo.name}"></h1>
+
+<p th:text="${seo.highName}"></p>
+
+<h2>Active Members</h2>
+
+<table>
+
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Grade Level</th>
+    </tr>
+    <p th:unless="${students} and ${students.size()}">no active members :(</p>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.fName}"></td>
+        <td th:text="${student.lName}"></td>
+        <td th:text="${student.grade.name}"></td>
+    </tr>
+</table>
+
+<a th:href="${'/admin/seo/'+seo.id+'/addStu'}" >Add Members</a>
+
+</body>
+</html>

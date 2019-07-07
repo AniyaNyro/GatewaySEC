@@ -27,12 +27,14 @@ public class SEO {
 
     private Boolean approved;
 
-    public SEO(){}
+    public SEO(){
+        approved = false;
+    }
 
     public SEO(String name, String highName) {
+        this();
         this.name = name;
         this.highName = highName;
-        this.approved = false;
     }
 
     //Make getters and setter for your columns

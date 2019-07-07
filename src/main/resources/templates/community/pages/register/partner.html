@@ -32,7 +32,7 @@
         </div>
         <div>
             <label th:for="number">Phone Number</label>
-            <input value="3145555555" th:field="*{number}"/>
+            <input th:field="*{number}"/>
             <span th:errors="*{number}" class="error"></span>
         </div>
         <div>

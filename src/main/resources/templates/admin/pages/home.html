@@ -17,7 +17,9 @@
 <h1>Recent Blog Post Here</h1>
 
 <h2>Student Empowerment Organization Request</h2>
-<p th:unless="${seo} and ${seo.size()}">no seos :(</p>
+<p th:unless="${seos} and ${seos.size()}">no seo requests :(</p>
+
+    <form method="post" th:object="${seo}">
 
         <table>
 
@@ -29,14 +31,39 @@
             <tr th:each="seo : ${seos}">
                 <td th:text="${seo.name}"></td>
                 <td th:text="${seo.highName}"></td>
-
+                <input type="hidden" name="seoId" th:value="${seo.id}"/>
+                <input type="submit" class="button" name="b1" value="Approve and Proceed" />
             </tr>
-
         </table>
 
-<h2>Partner Request</h2>
+    </form>
 
-<a href="admin/register/team">| Register a Team Member | </a><a href="/register/seo">Register Your SEO | </a><a href="register/partner">Register a Partner |</a>
+<h2>Partner Request</h2>
+<p th:unless="${partners} and ${partners.size()}">no partners :(</p>
+
+<form method="post" th:object="${partner}">
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Business or Individual</th>
+            <th>Industry</th>
+            <th>Description</th>
+        </tr>
+
+        <tr th:each="partner : ${partners}">
+            <td th:text="${partner.name}"></td>
+            <td th:text="${partner.who.name}"></td>
+            <td th:text="${partner.industry}"></td>
+            <td th:text="${partner.description}"></td>
+            <input type="hidden" name="partnerId" th:value="${partner.id}"/>
+            <input type="submit" class="button" name="b2" value="Approve" />
+        </tr>
+
+    </table>
+</form>
+
+<a href="/admin/register/team">| Register a Team Member | </a><a href="/register/seo">Register Your SEO | </a><a href="register/partner">Register a Partner |</a>
 
 </body>
 </html>
