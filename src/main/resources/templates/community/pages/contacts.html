@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="community/fragments :: head">
+<headq>
     <meta charset="UTF-8"/>
     <title>Contact Us</title>
-</head>
+</headq>
 <body>
-<nav th:replace="community/fragments :: navigation"></nav>
-<nav th:replace="community/fragments :: navigation2"></nav>
+<div>
+    <nav th:replace="community/fragments :: navigation"></nav>
+</div>
+<div>
+    <nav th:replace="community/fragments :: navigation2"></nav>
+</div>
+<div th:replace="fragments-shared :: modal"></div>
 
-<!--
-TODOS Create a DAO for for each model
-TODOS Create a attribute named ("contacts") to find all ("Team Members") in Daos
--->
 <h1 th:text="${title}">Default Title</h1>
 
 <p th:unless="${contacts} and ${contacts.size()}">no contacts :(</p>

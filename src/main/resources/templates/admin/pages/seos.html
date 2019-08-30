@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
-    <title>Other Contacts</title>
+    <title>SEOs</title>
 </head>
 <body>
 <div>
@@ -14,13 +14,15 @@
 
 <h1 th:text="${title}">Default Title</h1>
 
-<p th:unless="${contacts} and ${contacts.size()}">no contacts :(</p>
-
 <table>
-    <tr th:each="contact : ${contacts}">
-        <td th:text="${contact.name}"></td>
-        <td th:text="${contact.email}"></td>
-        <td th:text="${contact.number}"></td>
+
+    <tr>
+        <th>Name</th>
+        <th>High School</th>
+    </tr>
+    <tr th:each="seo : ${seos}">
+        <a href=""><td th:text="${seo.name}"></td></a>
+        <td th:text="${seo.highName}"></td>
     </tr>
 </table>
 

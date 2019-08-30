@@ -1,10 +1,7 @@
 package org.launchcode.GatewaySEC.controllers;
 
 import org.launchcode.GatewaySEC.models.*;
-import org.launchcode.GatewaySEC.models.data.PartnerDao;
-import org.launchcode.GatewaySEC.models.data.SEODao;
-import org.launchcode.GatewaySEC.models.data.StudentDao;
-import org.launchcode.GatewaySEC.models.data.TeamDao;
+import org.launchcode.GatewaySEC.models.data.*;
 import org.launchcode.GatewaySEC.models.forms.AddStudentForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +26,8 @@ public class AdminController {
     private StudentDao studentDao;
     @Autowired
     private TeamDao teamDao;
+    @Autowired
+    private FunderDao funderDao;
 
     @RequestMapping(value = "")
     public String home(Model model) {
@@ -112,6 +111,36 @@ public class AdminController {
         return "redirect:/admin";
 
     }
+
+    @RequestMapping(value = "view/partners", method = RequestMethod.GET)
+    public String displayOurPartners(Model model){
+        model.addAttribute("partners", partnerDao.findByApproved(true));
+        model.addAttribute("title","Our Partners");
+        return "admin/pages/partners";
+    }
+
+    @RequestMapping(value = "view/teamMembers", method = RequestMethod.GET)
+    public String displayViewTeam(Model model) {
+        model.addAttribute("contacts", teamDao.findAll());
+        model.addAttribute("title", "Team Members");
+        return "admin/pages/contacts";
+    }
+
+    @RequestMapping(value = "view/funders", method = RequestMethod.GET)
+    public String displayOurFunders(Model model){
+        model.addAttribute("funders", funderDao.findAll());
+        model.addAttribute("title","Our Funders");
+        return "admin/pages/funders";
+    }
+
+    @RequestMapping(value = "view/seos", method = RequestMethod.GET)
+    public String displayViewSEOs(Model model){
+        model.addAttribute("seos", seoDao.findByApproved(true));
+        model.addAttribute("title","All Student Empowerment Organizations");
+        return "admin/pages/seos";
+
+    }
+
 
 
 

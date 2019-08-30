@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+
+</head>
+<body>
+
+<div id="open-modal" class="modal-window">
+    <div>
+        <a href="#" title="Close" class="modal-close">Close</a>
+        <h1>Voilà!</h1>
+        <div>A CSS-only modal based on the :target pseudo-class. Hope you find it helpful.</div>
+        <div><small>Check out</small></div>
+        <a href="https://aminoeditor.com" target="_blank">👉 Amino: Live CSS Editor for Chrome</a>
+    </div>
+</div>
+<!--Modal: modalPush-->
+<div th:fragment="modal" class="flex" id="modalPush" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modalcontainer" role="document">
+        <div class="flex">
+            <div class="modal">
+                <div class="close"><span class="close">&times;</span></div>
+                <!--Content-->
+                <div class="content">
+                    <!--Header-->
+                    <div>
+                        <p>Access Point</p>
+                    </div>
+
+                    <form name="login" th:action="@{/login}" method="post">
+                    <!--Body-->
+                    <div>
+                        <label for="key">Pass Key</label>
+                        <input type="key" id="key" name="key"/>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="buttons">
+                        <a href="https://mdbootstrap.com/products/jquery-ui-kit/" class="btn btn-info">Enter</a>
+                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                    </div>
+                    </form>
+                </div>
+        <!--/.Content-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal: modalPush-->
+</body>
+</html>

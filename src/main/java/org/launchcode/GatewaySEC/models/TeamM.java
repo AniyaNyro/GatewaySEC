@@ -22,7 +22,6 @@ public class TeamM {
     @Email(message = "Invalid Email")
     private String email;
 
-
     private Long number;
 
     @ManyToMany
@@ -30,13 +29,19 @@ public class TeamM {
 
     private Boolean admin;
 
-    public TeamM(){}
+    private String passKey;
+
+    public TeamM(){
+        admin = false;
+        passKey = "gateway123";
+
+    }
 
     public TeamM(String name, String email, Long number) {
         this.name = name;
         this.email = email;
         this.number = number;
-        this.admin = false;
+
     }
 
     public int getId() {
@@ -86,4 +91,6 @@ public class TeamM {
     public void setAdmin(Boolean admin) {
         this.admin = admin;
     }
+
+    public void setPassKey(String passKey) { this.passKey = passKey; }
 }

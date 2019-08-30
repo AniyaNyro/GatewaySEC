@@ -27,8 +27,12 @@ public class SEO {
 
     private Boolean approved;
 
+    private String passKey;
+
     public SEO(){
         approved = false;
+        passKey = "gatewayseo";
+
     }
 
     public SEO(String name, String highName) {
@@ -80,8 +84,7 @@ public class SEO {
         this.approved = approved;
     }
 
-
-
+    public void setPassKey(String passKey) { this.passKey = passKey; }
 }
 
 

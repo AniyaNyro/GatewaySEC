@@ -2,24 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
-
-</head>
 <body>
 <div>
+
     <nav th:fragment="navigation">
         <a href="/admin">Home</a>
         <a href="/admin">Access Point</a>
-        <a href="/admin">Other Contacts</a>
+        <a href="/admin/view/teamMembers">Other Contacts</a>
         <a href="/admin">Blog</a>
     </nav>
 </div>
 <div>
     <nav th:fragment="navigation2">
-        <a href="/admin">Your SEO's</a>
+        <a href="/admin/view/seos">Your SEO's</a>
         <a href="/admin">Profile</a>
-        <a href="/admin">Our Funders</a>
-        <a href="/admin">Our Partners</a>
+        <a href="/admin/view/funders">Our Funders</a>
+        <a href="/admin/view/partners">Our Partners</a>
     </nav>
 </div>
+
+
 </body>
 </html>

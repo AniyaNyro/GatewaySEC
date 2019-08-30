@@ -6,12 +6,11 @@
 </head>
 <body>
 <div>
-    <nav th:replace="community/fragments :: navigation"></nav>
+    <nav th:replace="admin/fragments :: navigation"></nav>
 </div>
 <div>
-    <nav th:replace="community/fragments :: navigation2"></nav>
+    <nav th:replace="admin/fragments :: navigation2"></nav>
 </div>
-<div th:replace="fragments-shared :: modal"></div>
 
 <h1 th:text="${title}">Default Title</h1>
 
@@ -19,6 +18,8 @@
 <table>
     <tr th:each="funder : ${funders}">
         <td th:text="${funder.name}"></td>
+        <td th:text="${funder.email}"></td>
+        <td th:text="${funder.number}"></td>
     </tr>
 </table>
 
