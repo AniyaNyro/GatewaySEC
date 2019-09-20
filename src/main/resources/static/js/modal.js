@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-$( "#target" ).click(function() {
+$( "#target" ).onclick(function() {
   $("#modalPush").show()
 });
     });

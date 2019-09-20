@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<headq>
-    <meta charset="UTF-8"/>
+
+<head th:replace="community/fragments :: head" >
     <title>Contact Us</title>
-</headq>
+</head>
+
 <body>
+
 <div>
     <nav th:replace="community/fragments :: navigation"></nav>
 </div>
+
 <div>
     <nav th:replace="community/fragments :: navigation2"></nav>
 </div>
-<div th:replace="fragments-shared :: modal"></div>
+
 
 <h1 th:text="${title}">Default Title</h1>
 

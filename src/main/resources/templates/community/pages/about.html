@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
+
+<head th:replace="community/fragments :: head" >
     <title>About</title>
 </head>
+
 <body>
+
 <div>
     <nav th:replace="community/fragments :: navigation"></nav>
 </div>
+
 <div>
     <nav th:replace="community/fragments :: navigation2"></nav>
 </div>
-<div th:replace="fragments-shared :: modal"></div>
 
 <h1 th:text="${title}">Default Title</h1>
 
 <h3>For the Betterment of the Community Model Here</h3>
 <h3>Planning Process Here</h3>
 
-<a href="/view/seos">| SEO | </a><a href="/view/teamMembers">Team Members | </a><a href="/partners">Partners |</a>
+<button onclick="window.location.href = '/view/seos'" type="button" class="btn btn-primary btn-lg">SEOs</button> <button onclick="window.location.href = '/view/teamMembers'" type="button" class="btn btn-primary btn-lg">Team Members</button> <button onclick="window.location.href = '/partners'" type="button" class="btn btn-primary btn-lg">Partners</button>
+
 <h4>Counters go here</h4>
 
 </body>

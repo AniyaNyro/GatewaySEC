@@ -2,22 +2,56 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+</head>
 <body>
 <div>
 
-    <nav th:fragment="navigation">
-        <a href="/admin">Home</a>
-        <a href="/admin">Access Point</a>
-        <a href="/admin/view/teamMembers">Other Contacts</a>
-        <a href="/admin">Blog</a>
+    <nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Gateway SEC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Access Point</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/view/teamMembers">Other Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Blog</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </div>
 <div>
-    <nav th:fragment="navigation2">
-        <a href="/admin/view/seos">Your SEO's</a>
-        <a href="/admin">Profile</a>
-        <a href="/admin/view/funders">Our Funders</a>
-        <a href="/admin/view/partners">Our Partners</a>
+    <nav th:fragment="navigation2" class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/view/seos">Your SEOs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/view/funders">Our Funders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/view/partners">Our Partners</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </div>
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
+<head th:replace="admin/fragments :: head">
     <title>Our Partners</title>
 </head>
 <body>
@@ -15,12 +14,21 @@
 <h1 th:text="${title}">Default Title</h1>
 
 <p th:unless="${partners} and ${partners.size()}">no partners :(</p>
-<table>
-    <tr th:each="partner : ${partners}">
-        <td th:text="${partner.name}"></td>
-        <td th:text="${partner.email}"></td>
-        <td th:text="${partner.number}"></td>
-    </tr>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" th:each="partner : ${partners}">
+            <td th:text="${partner.name}"></td>
+            <td th:text="${partner.email}"></td>
+            <td th:text="${partner.number}"></td>
+        </tr>
+    </tbody>
 </table>
 
 </body>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" th:href="@{/css/home.css}"/>
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
+<head th:replace="community/fragments :: head" >
 
-    <script type="text/javascript" th:src="@{/js/modal.js}"></script>
+
+<!--    <link rel="stylesheet" th:href="@{/css/home.css}"/>-->
+<!--    <script-->
+<!--            src="https://code.jquery.com/jquery-3.4.1.min.js"-->
+<!--            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="-->
+<!--            crossorigin="anonymous"></script>-->
+
+<!--    <script type="text/javascript" th:src="@{/js/modal.js}"></script>-->
 
 
     <title>Home</title>
@@ -21,13 +22,13 @@
         <nav th:replace="community/fragments :: navigation2"></nav>
     </div>
 
-    <div th:replace="fragments-shared :: modal"></div>
-
-    <h1>This is Your Home Page.</h1>
-    <h3>Upcoming Events Carousel Here</h3>
 
 
-    <a href="/register/partner">| Become a Partner | </a><a href="/register/seo">Register Your SEO | </a><a href="register/funder">Donate Here |</a>
+
+    <button onclick="window.location.href = '/register/partner'" type="button" class="btn btn-primary btn-lg">Become a Partner</button> <button onclick="window.location.href = '/register/seo'" type="button" class="btn btn-primary btn-lg">Register Your SEO</button> <button onclick="window.location.href = '/register/funder'" type="button" class="btn btn-primary btn-lg">Donate Here</button>
+
+
+
 
 </body>
 </html>

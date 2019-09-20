@@ -21,43 +21,48 @@
 
     <form method="post" th:object="${seo}">
 
-        <table>
+        <table class="table">
+            <thead>
 
-            <tr>
-                <th>Name</th>
-                <th>High School Name</th>
-            </tr>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">High School Name</th>
+                    <th scope="col">Submit</th>
+                </tr>
 
-            <tr th:each="seo : ${seos}">
-                <td th:text="${seo.name}"></td>
-                <td th:text="${seo.highName}"></td>
-                <input type="hidden" name="seoId" th:value="${seo.id}"/>
-                <input type="submit" class="button" name="b1" value="Approve and Proceed" />
-            </tr>
+            </thead>
+            <tbody>
+                <tr scope="row" th:each="seo : ${seos}">
+                    <td th:text="${seo.name}"></td>
+                    <td th:text="${seo.highName}"></td>
+                    <input type="hidden" name="seoId" th:value="${seo.id}"/>
+                    <td><input type="submit" class="btn btn-primary mb-2" name="b1" value="Approve and Proceed" /></td>
+                </tr>
+            </tbody>
         </table>
-
     </form>
 
 <h2>Partner Request</h2>
-<p th:unless="${partners} and ${partners.size()}">no partners :(</p>
+<p th:unless="${partners} and ${partners.size()}">no partner requests :(</p>
 
 <form method="post" th:object="${partner}">
-    <table>
+    <table class="table">
 
         <tr>
-            <th>Name</th>
-            <th>Business or Individual</th>
-            <th>Industry</th>
-            <th>Description</th>
+            <th scope="col">Name</th>
+            <th scope="col">Business or Individual</th>
+            <th scope="col">Industry</th>
+            <th scope="col">Description</th>
+            <th scope="col">Submit</th>
         </tr>
 
-        <tr th:each="partner : ${partners}">
+        <tr scope="row" th:each="partner : ${partners}">
             <td th:text="${partner.name}"></td>
             <td th:text="${partner.who.name}"></td>
             <td th:text="${partner.industry}"></td>
             <td th:text="${partner.description}"></td>
             <input type="hidden" name="partnerId" th:value="${partner.id}"/>
-            <input type="submit" class="button" name="b2" value="Approve" />
+            <td><input type="submit" class="btn btn-primary mb-2" name="b2" value="Approve" /></td>
         </tr>
 
     </table>

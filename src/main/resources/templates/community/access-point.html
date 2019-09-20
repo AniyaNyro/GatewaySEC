@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="community/fragments :: head" >
+    <title>Access Point</title>
+</head>
+<body>
+<div>
+    <nav th:replace="community/fragments :: navigation"></nav>
+</div>
+<div>
+    <nav th:replace="community/fragments :: navigation2"></nav>
+</div>
+
+</body>
+<div style="text-align: center">
+    <h1>Admin Login</h1>
+    <form action="login" method="post">
+        <label for="key">Passkey:</label>
+        <input name="key" size="30" />
+        <button type="submit">Login</button>
+    </form>
+</div>
+</body>
+</html>

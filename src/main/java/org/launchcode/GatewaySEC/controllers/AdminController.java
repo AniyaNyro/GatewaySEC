@@ -140,7 +140,13 @@ public class AdminController {
         return "admin/pages/seos";
 
     }
+    @RequestMapping(value = "profile/?teamMId=", method = RequestMethod.GET)
+    public String displayProfile(Model model){
+        model.addAttribute("seos", seoDao.findByApproved(true));
+        model.addAttribute("title","All Student Empowerment Organizations");
+        return "admin/pages/seos";
 
+    }
 
 
 

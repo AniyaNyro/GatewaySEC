@@ -2,28 +2,65 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 
 </head>
 
 <body>
 <div>
-    <nav th:fragment="navigation">
-        <a href="/">Home</a>
-        <a href="/contacts">Contact Us</a>
-        <a href="/">Blog</a>
-        <!-- Button trigger modal-->
-        <button th:fragment="accessPoint" id="target" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Access Point</button>
-
-
+    <nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Gateway SEC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contacts">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Access Point</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
     </nav>
+
 </div>
 <div>
-    <nav th:fragment="navigation2">
-        <a href="/about">About</a>
-        <a href="/need">The Need</a>
-        <a href="/funders">Our Funders</a>
-        <a href="/partners">Our Partners</a>
+    <nav th:fragment="navigation2" class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/need">The Need</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/funders">Our Funders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/partners">Our Partners</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </div>
+
 </body>
 </html>

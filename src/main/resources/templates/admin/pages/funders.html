@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
+<head th:replace="admin/fragments :: head">
     <title>Our Funders</title>
 </head>
 <body>
@@ -15,12 +14,21 @@
 <h1 th:text="${title}">Default Title</h1>
 
 <p th:unless="${funders} and ${funders.size()}">no partners :(</p>
-<table>
-    <tr th:each="funder : ${funders}">
-        <td th:text="${funder.name}"></td>
-        <td th:text="${funder.email}"></td>
-        <td th:text="${funder.number}"></td>
-    </tr>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" th:each="funder : ${funders}">
+            <td th:text="${funder.name}"></td>
+            <td th:text="${funder.email}"></td>
+            <td th:text="${funder.number}"></td>
+        </tr>
+    </tbody>
 </table>
 
 </body>

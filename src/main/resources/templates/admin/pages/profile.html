@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+<head th:replace="admin/fragments :: head">
+    <title>Profile</title>
 </head>
 <body>
 <div>
@@ -14,5 +13,19 @@
 
 <h1 th:text="${title}">Default Title</h1>
 
+<div class="card text-center">
+    <div class="card-header">
+        Profile
+    </div>
+    <div class="card-body">
+        <h5 class="card-title" th:text="${admin.name}"></h5>
+        <p class="card-text" th:text="${admin.number}"></p>
+        <p class="card-text" th:text="${admin.email}"></p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+        <a href="www.youngvoiceswithaction.org">Young Voices With Action</a>
+    </div>
+</div>
 </body>
 </html>
